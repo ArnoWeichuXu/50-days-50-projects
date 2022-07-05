@@ -1,5 +1,5 @@
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const prev = document.getElementById("prev");
+const next = document.getElementById("next");
 const line = document.querySelectorAll(".line");
 const circles = document.querySelectorAll(".circle");
 
@@ -30,7 +30,7 @@ function update() {
     }
   });
   circles.forEach((circleNode, index) => {
-    if (index < currentActive) {
+    if (index < currentActive + 1) {
       circleNode.classList.add("active");
     } else {
       circleNode.classList.remove("active");
@@ -48,5 +48,4 @@ function update() {
     next.disabled = false;
     next.classList.add("active");
   }
-  console.log(currentActive);
 }
